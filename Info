@@ -1,0 +1,29 @@
+Sette opp en default hjemme side bakgrunn på PCen.
+Scriptet vil kjøre kun en gang etter installasjon av appen, bruk install.ps1 som setup file.
+
+
+Intune app setup:
+
+
+Install Command: powershell.exe -ExecutionPolicy Bypass -File .\install.ps1
+
+Uninstall Command: powershell.exe -ExecutionPolicy Bypass -File .\uninstall.ps1
+
+
+
+
+Detection rule – Registry:
+
+Rule type: Registry
+
+Key path: HKEY_LOCAL_MACHINE\SOFTWARE\BackItUp\Wallpaper
+
+Value name: Version
+
+Detection method: String comparison
+
+Operator: Equals
+
+Value: 2.0
+
+Associated with a 32-bit app on 64-bit clients: No
