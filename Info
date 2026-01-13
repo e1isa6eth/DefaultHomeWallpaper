@@ -7,9 +7,8 @@ Intune app setup:
 
 Installer type: Command line 
 Install command: powershell.exe -ExecutionPolicy Bypass -WindowStyle Hidden -File install.ps1
-
-
 Uninstall command: powershell.exe -ExecutionPolicy Bypass -WindowStyle Hidden -File uninstall.ps1
+
 
 Detection rule
 Rule type:	Registry
