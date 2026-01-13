@@ -4,26 +4,20 @@ Scriptet vil kjøre kun en gang etter installasjon av appen, bruk install.ps1 so
 
 Intune app setup:
 
-
-Install Command: powershell.exe -ExecutionPolicy Bypass -File .\install.ps1
-
-Uninstall Command: powershell.exe -ExecutionPolicy Bypass -File .\uninstall.ps1
+Installer type: Command line 
+Install command: powershell.exe -ExecutionPolicy Bypass -WindowStyle Hidden -File install.ps1
 
 
+Uninstall command: powershell.exe -ExecutionPolicy Bypass -WindowStyle Hidden -File uninstall.ps1
+
+Detection rule
+Rule type:	Registry
+Key path:	HKLM\SOFTWARE\Custom\DefaultWallpaper
+Value name:	(la stå tom)
+Detection method:	Key exists
+32-bit app setting: no 
 
 
-Detection rule – Registry:
-
-Rule type: Registry
-
-Key path: HKEY_LOCAL_MACHINE\SOFTWARE\BackItUp\Wallpaper
-
-Value name: Version
-
-Detection method: String comparison
-
-Operator: Equals
-
-Value: 2.0
-
-Associated with a 32-bit app on 64-bit clients: No
+OS-krav / Arch
+Minimum OS	Windows 10 1903 eller nyere
+Architecture	Ja, kun x64 og eventuelt ARM64 hvis ønskelig
