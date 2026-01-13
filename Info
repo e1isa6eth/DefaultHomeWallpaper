@@ -11,11 +11,11 @@ Uninstall command: powershell.exe -ExecutionPolicy Bypass -WindowStyle Hidden -F
 
 
 Detection rule
-Rule type:	Registry
-Key path:	HKLM\SOFTWARE\Custom\DefaultWallpaper
-Value name:	(la stå tom)
-Detection method:	Key exists
-32-bit app setting: no 
+Rule type: File
+Path: C:\ProgramData\DefaultWallpaper
+File or folder: install.log
+Detection method: File or folder exists
+Associated with a 32-bit app on 64-bit clients: No
 
 
 OS-krav / Arch
