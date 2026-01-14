@@ -21,7 +21,7 @@ Bruk install.ps1 som setup file.
 Intune app setup:
 
 Installer type: Command line 
-Install command: powershell.exe -ExecutionPolicy Bypass -WindowStyle Hidden -File "C:\ProgramData\DefaultWallpaper\install.ps1"
+Install command: powershell.exe -ExecutionPolicy Bypass -WindowStyle Hidden -File install.ps1
 Uninstall command: powershell.exe -ExecutionPolicy Bypass -WindowStyle Hidden -File "C:\ProgramData\DefaultWallpaper\uninstall.ps1"
 
 
