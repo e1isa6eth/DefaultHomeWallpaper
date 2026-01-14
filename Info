@@ -1,12 +1,27 @@
 Sette opp en default hjemme side bakgrunn på PCen.
-Scriptet kjøres automatisk en gang for alle brukere som logger inn på enheten for første gang. 
-Det setter et standard skrivebordsbakgrunnsbilde som brukeren fortsatt kan endre, og vil ikke bli fjernet for eksisterende brukere ved push. Bruk install.ps1 som setup file.
 
+Scriptet installerer et bakgrunnsbilde og konfigurerer det som standard for nye brukere som logger inn på enheten etter at appen er installert.
+
+Det gjør dette ved å legge inn bakgrunnsinnstillinger i Windows’ Default User profil, slik at nye brukere arver det automatisk ved første innlogging.
+
+Når brukeren logger inn første gang, kjører Active Setup et script som setter bakgrunn via HKCU (brukerens egne registry innstillinger).
+
+Eksisterende brukere (som allerede har logget inn før appen ble installert) blir ikke påvirket. Bakgrunnen endres ikke for dem automatisk.
+
+Scriptet låser ikke bakgrunnen, brukeren kan fortsatt endre den selv etterpå.
+
+En versjons sjekk ("check.ps1") gjør at vi kan oppdatere bakgrunn og reinstallere appen senere uten å måtte lage helt ny app hver gang, som i denne løsningen. Se nedenfor:
+
+https://scloud.work/wallpaper-lockscreen-intune-business/?unapproved=17774&moderation-hash=c27dedbaf4ee02775e445d4d32b3aba3
+
+
+
+Bruk install.ps1 som setup file.
 
 Intune app setup:
 
 Installer type: Command line 
-Install command: powershell.exe -ExecutionPolicy Bypass -WindowStyle Hidden -File install.ps1
+Install command: powershell.exe -ExecutionPolicy Bypass -WindowStyle Hidden -File "C:\ProgramData\DefaultWallpaper\install.ps1"
 Uninstall command: powershell.exe -ExecutionPolicy Bypass -WindowStyle Hidden -File "C:\ProgramData\DefaultWallpaper\uninstall.ps1"
 
 
