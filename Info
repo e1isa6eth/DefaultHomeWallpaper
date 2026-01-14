@@ -10,10 +10,6 @@ Eksisterende brukere (som allerede har logget inn før appen ble installert) bli
 
 Scriptet låser ikke bakgrunnen, brukeren kan fortsatt endre den selv etterpå.
 
-En versjons sjekk ("check.ps1") gjør at vi kan oppdatere bakgrunn og reinstallere appen senere uten å måtte lage helt ny app hver gang, som i denne løsningen. Se nedenfor:
-
-https://scloud.work/wallpaper-lockscreen-intune-business/?unapproved=17774&moderation-hash=c27dedbaf4ee02775e445d4d32b3aba3
-
 
 
 Bruk install.ps1 som setup file.
