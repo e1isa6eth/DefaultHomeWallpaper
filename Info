@@ -1,6 +1,6 @@
 Sette opp en default hjemme side bakgrunn på PCen.
-Scriptet kjøres automatisk én gang for alle brukere som logger inn på enheten for første gang (ingen eksisterende lokal profil). 
-Det setter et standard skrivebordsbakgrunnsbilde som brukeren fortsatt kan endre. Bruk install.ps1 som setup file.
+Scriptet kjøres automatisk en gang for alle brukere som logger inn på enheten for første gang. 
+Det setter et standard skrivebordsbakgrunnsbilde som brukeren fortsatt kan endre, og vil ikke bli fjernet for eksisterende brukere ved push. Bruk install.ps1 som setup file.
 
 
 Intune app setup:
