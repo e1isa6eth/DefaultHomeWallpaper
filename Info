@@ -1,27 +1,33 @@
 Sette opp en default hjemme side bakgrunn på PCen.
 
+SCRIPT FUNSKJON:
 Scriptet installerer et bakgrunnsbilde og konfigurerer det som standard for nye brukere som logger inn på enheten etter at appen er installert.
-
 Det gjør dette ved å legge inn bakgrunnsinnstillinger i Windows’ Default User profil, slik at nye brukere arver det automatisk ved første innlogging.
-
 Når brukeren logger inn første gang, kjører Active Setup et script som setter bakgrunn via HKCU (brukerens egne registry innstillinger).
-
 Eksisterende brukere (som allerede har logget inn før appen ble installert) blir ikke påvirket. Bakgrunnen endres ikke for dem automatisk.
-
 Scriptet låser ikke bakgrunnen, brukeren kan fortsatt endre den selv etterpå.
 
 
+OPPDATERING AV BAKGRUNN:
+For å oppdatere bakgrunnen trenger du kun å erstatte bildet med et nytt, med samme navn, repakke løsningen til en ny .intunewin-fil og laste den opp i samme app i Intune.
+Eksisterende brukere som allerede er logget inn vil ikke få bakgrunnen endret, selv om de tidligere har fått standardbakgrunnen.
+Nye brukere som logger inn etter oppdateringen vil automatisk få den nye bakgrunnen.
+Det opprettes ingen duplikate filer, siden appen ikke reinstalles for eksisterende brukere.
+Derfor er det heller ikke nødvendig å avinstallere appen før oppdatering – den samme appen kan gjenbrukes med nytt bilde.
 
-Bruk install.ps1 som setup file.
+
+
+Bruk install.ps1 som setup file for intunewin pakking. Riktig mappe sti og hvilken mappe du vil at den skal lagres for output.
 
 Intune app setup:
 
+PROGRAM
 Installer type: Command line 
 Install command: powershell.exe -ExecutionPolicy Bypass -WindowStyle Hidden -File install.ps1
 Uninstall command: powershell.exe -ExecutionPolicy Bypass -WindowStyle Hidden -File "C:\ProgramData\DefaultWallpaper\uninstall.ps1"
 
 
-Detection rule
+DETECTION RULE
 Rule type: File
 Path: C:\ProgramData\DefaultWallpaper
 File or folder: install.log
@@ -29,6 +35,17 @@ Detection method: File or folder exists
 Associated with a 32-bit app on 64-bit clients: No
 
 
-OS-krav / Arch
+REQUIREMENTS
+Check operating system architecture: Yes. Specify the systems the app can be installed on.
+
+Install on x64 system
+Install on ARM64 system
+
+Minimum operating system
+Windows 10 1903
+
+
+
+OS KRAV/ARCH 
 Minimum OS	Windows 10 1903 eller nyere
 Architecture	Ja, kun x64 og eventuelt ARM64 hvis ønskelig
