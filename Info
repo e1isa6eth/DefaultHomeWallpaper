@@ -30,7 +30,7 @@ powershell.exe -NoProfile -ExecutionPolicy Bypass -WindowStyle Hidden -File "C:\
 DETECTION RULE
 Rule type: File
 Path: C:\ProgramData\DefaultWallpaper
-File or folder: Background.jpg
+File or folder: install.log
 Detection method: File or folder exists
 Associated with a 32-bit app on 64-bit clients: No
 
