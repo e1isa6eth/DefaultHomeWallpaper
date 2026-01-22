@@ -24,7 +24,7 @@ Intune app setup:
 
 PROGRAM
 Installer type: Command line 
-powershell.exe -NoProfile -ExecutionPolicy Bypass -WindowStyle Hidden -File .\install.ps1
+powershell.exe -NoProfile -ExecutionPolicy Bypass -WindowStyle Hidden -File ".\install.ps1"
 powershell.exe -NoProfile -ExecutionPolicy Bypass -WindowStyle Hidden -File "C:\ProgramData\DefaultWallpaper\uninstall.ps1"
 
 DETECTION RULE
