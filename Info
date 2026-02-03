@@ -24,8 +24,8 @@ Intune app setup:
 
 PROGRAM
 Installer type: Command line 
-Install: cmd.exe /c if exist "%SystemRoot%\Sysnative\WindowsPowerShell\v1.0\powershell.exe" ("%SystemRoot%\Sysnative\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -ExecutionPolicy Bypass -WindowStyle Hidden -File ".\install.ps1") else ("%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -ExecutionPolicy Bypass -WindowStyle Hidden -File ".\install.ps1")
-Uninstall: cmd.exe /c if exist "%SystemRoot%\Sysnative\WindowsPowerShell\v1.0\powershell.exe" ("%SystemRoot%\Sysnative\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -ExecutionPolicy Bypass -WindowStyle Hidden -File "C:\ProgramData\DefaultWallpaper\uninstall.ps1") else ("%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -ExecutionPolicy Bypass -WindowStyle Hidden -File "C:\ProgramData\DefaultWallpaper\uninstall.ps1")
+Install command: powershell.exe -NoProfile -ExecutionPolicy Bypass -WindowStyle Hidden -File install.ps1
+Uninstall command: powershell.exe -NoProfile -ExecutionPolicy Bypass -WindowStyle Hidden -File "C:\ProgramData\DefaultWallpaper\uninstall.ps1"
 
 DETECTION RULE
 Rule type: File
